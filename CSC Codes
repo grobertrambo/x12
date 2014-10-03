@@ -1,0 +1,1557 @@
+Health Care Claim Status Codes  ASC X12 LAST UPDATED 7/1/2014
+
+0	Cannot provide further status electronically.
+Start: 01/01/1995
+1	For more detailed information, see remittance advice.
+Start: 01/01/1995
+2	More detailed information in letter.
+Start: 01/01/1995
+3	Claim has been adjudicated and is awaiting payment cycle.
+Start: 01/01/1995
+4	This is a subsequent request for information from the original request.
+Start: 01/01/1995 | Last Modified: 01/27/2008 | Stop: 07/01/2008
+5	This is a final request for information.
+Start: 01/01/1995 | Last Modified: 01/27/2008 | Stop: 07/01/2008
+6	Balance due from the subscriber.
+Start: 01/01/1995
+7	Claim may be reconsidered at a future date.
+Start: 01/01/1995 | Last Modified: 01/27/2008 | Stop: 07/01/2008
+8	No payment due to contract/plan provisions.
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+9	No payment will be made for this claim.
+Start: 01/01/1995 | Last Modified: 01/27/2008 | Stop: 07/01/2008
+10	All originally submitted procedure codes have been combined.
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+11	Some originally submitted procedure codes have been combined.
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+12	One or more originally submitted procedure codes have been combined.
+Start: 01/01/1995 | Last Modified: 06/30/2001
+13	All originally submitted procedure codes have been modified.
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+14	Some all originally submitted procedure codes have been modified.
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+15	One or more originally submitted procedure code have been modified.
+Start: 01/01/1995 | Last Modified: 06/30/2001
+16	Claim/encounter has been forwarded to entity. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+17	Claim/encounter has been forwarded by third party entity to entity. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+18	Entity received claim/encounter, but returned invalid status. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+19	Entity acknowledges receipt of claim/encounter. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+20	Accepted for processing.
+Start: 01/01/1995 | Last Modified: 06/30/2001
+21	Missing or invalid information. Note: At least one other status code is required to identify the missing or invalid information.
+Start: 01/01/1995 | Last Modified: 07/09/2007
+22	... before entering the adjudication system.
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+23	Returned to Entity. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+24	Entity not approved as an electronic submitter. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+25	Entity not approved. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+26	Entity not found. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+27	Policy canceled.
+Start: 01/01/1995 | Last Modified: 06/30/2001
+28	Claim submitted to wrong payer.
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+29	Subscriber and policy number/contract number mismatched.
+Start: 01/01/1995
+30	Subscriber and subscriber id mismatched.
+Start: 01/01/1995
+31	Subscriber and policyholder name mismatched.
+Start: 01/01/1995
+32	Subscriber and policy number/contract number not found.
+Start: 01/01/1995
+33	Subscriber and subscriber id not found.
+Start: 01/01/1995
+34	Subscriber and policyholder name not found.
+Start: 01/01/1995
+35	Claim/encounter not found.
+Start: 01/01/1995
+37	Predetermination is on file, awaiting completion of services.
+Start: 01/01/1995
+38	Awaiting next periodic adjudication cycle.
+Start: 01/01/1995
+39	Charges for pregnancy deferred until delivery.
+Start: 01/01/1995
+40	Waiting for final approval.
+Start: 01/01/1995
+41	Special handling required at payer site.
+Start: 01/01/1995
+42	Awaiting related charges.
+Start: 01/01/1995
+44	Charges pending provider audit.
+Start: 01/01/1995
+45	Awaiting benefit determination.
+Start: 01/01/1995
+46	Internal review/audit.
+Start: 01/01/1995
+47	Internal review/audit - partial payment made.
+Start: 01/01/1995
+48	Referral/authorization.
+Start: 01/01/1995 | Last Modified: 02/28/2001 | Stop: 01/01/2012
+Notes: Refer to codes 252 and 761.
+49	Pending provider accreditation review.
+Start: 01/01/1995
+50	Claim waiting for internal provider verification.
+Start: 01/01/1995
+51	Investigating occupational illness/accident.
+Start: 01/01/1995
+52	Investigating existence of other insurance coverage.
+Start: 01/01/1995
+53	Claim being researched for Insured ID/Group Policy Number error.
+Start: 01/01/1995
+54	Duplicate of a previously processed claim/line.
+Start: 01/01/1995
+55	Claim assigned to an approver/analyst.
+Start: 01/01/1995
+56	Awaiting eligibility determination.
+Start: 01/01/1995
+57	Pending COBRA information requested.
+Start: 01/01/1995
+59	Information was requested by a non-electronic method. Note: At least one other status code is required to identify the requested information.
+Start: 01/01/1995 | Last Modified: 10/17/2010
+60	Information was requested by an electronic method. Note: At least one other status code is required to identify the requested information.
+Start: 01/01/1995 | Last Modified: 10/17/2010
+61	Eligibility for extended benefits.
+Start: 01/01/1995
+64	Re-pricing information.
+Start: 01/01/1995
+65	Claim/line has been paid.
+Start: 01/01/1995
+66	Payment reflects usual and customary charges.
+Start: 01/01/1995
+67	Payment made in full.
+Start: 01/01/1995 | Last Modified: 01/27/2008 | Stop: 07/01/2008
+68	Partial payment made for this claim.
+Start: 01/01/1995 | Last Modified: 01/27/2008 | Stop: 07/01/2008
+69	Payment reflects plan provisions.
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+70	Payment reflects contract provisions.
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+71	Periodic installment released.
+Start: 01/01/1995 | Last Modified: 01/27/2008 | Stop: 07/01/2008
+72	Claim contains split payment.
+Start: 01/01/1995
+73	Payment made to entity, assignment of benefits not on file. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+78	Duplicate of an existing claim/line, awaiting processing.
+Start: 01/01/1995
+81	Contract/plan does not cover pre-existing conditions.
+Start: 01/01/1995
+83	No coverage for newborns.
+Start: 01/01/1995
+84	Service not authorized.
+Start: 01/01/1995
+85	Entity not primary. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+86	Diagnosis and patient gender mismatch.
+Start: 01/01/1995 | Last Modified: 02/28/2000
+87	Denied: Entity not found. (Use code 26 with appropriate Claim Status category Code)
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+88	Entity not eligible for benefits for submitted dates of service. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+89	Entity not eligible for dental benefits for submitted dates of service. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+90	Entity not eligible for medical benefits for submitted dates of service. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+91	Entity not eligible/not approved for dates of service. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+92	Entity does not meet dependent or student qualification. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+93	Entity is not selected primary care provider. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+94	Entity not referred by selected primary care provider. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+95	Requested additional information not received.
+Start: 01/01/1995 | Last Modified: 07/09/2007
+Notes: If known, the payer must report a second claim status code identifying the requested information.
+96	No agreement with entity. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+97	Patient eligibility not found with entity. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+98	Charges applied to deductible.
+Start: 01/01/1995
+99	Pre-treatment review.
+Start: 01/01/1995
+100	Pre-certification penalty taken.
+Start: 01/01/1995
+101	Claim was processed as adjustment to previous claim.
+Start: 01/01/1995
+102	Newborn's charges processed on mother's claim.
+Start: 01/01/1995
+103	Claim combined with other claim(s).
+Start: 01/01/1995
+104	Processed according to plan provisions (Plan refers to provisions that exist between the Health Plan and the Consumer or Patient)
+Start: 01/01/1995 | Last Modified: 06/01/2008
+105	Claim/line is capitated.
+Start: 01/01/1995
+106	This amount is not entity's responsibility. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+107	Processed according to contract provisions (Contract refers to provisions that exist between the Health Plan and a Provider of Health Care Services)
+Start: 01/01/1995 | Last Modified: 06/01/2008
+108	Coverage has been canceled for this entity. (Use code 27)
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+109	Entity not eligible. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+110	Claim requires pricing information.
+Start: 01/01/1995
+111	At the policyholder's request these claims cannot be submitted electronically.
+Start: 01/01/1995
+112	Policyholder processes their own claims.
+Start: 01/01/1995 | Last Modified: 01/27/2008 | Stop: 07/01/2008
+113	Cannot process individual insurance policy claims.
+Start: 01/01/1995 | Last Modified: 01/27/2008 | Stop: 07/01/2008
+114	Claim/service should be processed by entity. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+115	Cannot process HMO claims
+Start: 01/01/1995 | Last Modified: 01/27/2008 | Stop: 07/01/2008
+116	Claim submitted to incorrect payer.
+Start: 01/01/1995
+117	Claim requires signature-on-file indicator.
+Start: 01/01/1995
+118	TPO rejected claim/line because payer name is missing. (Use status code 21 and status code 125 with entity code IN)
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+119	TPO rejected claim/line because certification information is missing. (Use status code 21 and status code 252)
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+120	TPO rejected claim/line because claim does not contain enough information. (Use status code 21)
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+121	Service line number greater than maximum allowable for payer.
+Start: 01/01/1995
+122	Missing/invalid data prevents payer from processing claim. (Use CSC Code 21)
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+123	Additional information requested from entity. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+124	Entity's name, address, phone and id number. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+125	Entity's name. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+126	Entity's address. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+127	Entity's Communication Number. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 06/06/2010
+128	Entity's tax id. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+129	Entity's Blue Cross provider id. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+130	Entity's Blue Shield provider id. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+131	Entity's Medicare provider id. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+132	Entity's Medicaid provider id. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+133	Entity's UPIN. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+134	Entity's CHAMPUS provider id. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+135	Entity's commercial provider id. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+136	Entity's health industry id number. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+137	Entity's plan network id. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+138	Entity's site id . Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+139	Entity's health maintenance provider id (HMO). Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+140	Entity's preferred provider organization id (PPO). Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+141	Entity's administrative services organization id (ASO). Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+142	Entity's license/certification number. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+143	Entity's state license number. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+144	Entity's specialty license number. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+145	Entity's specialty/taxonomy code. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+146	Entity's anesthesia license number. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+147	Entity's qualification degree/designation (e.g. RN,PhD,MD). Note: This code requires use of an Entity Code.
+Start: 02/28/1997 | Last Modified: 02/11/2010
+148	Entity's social security number. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+149	Entity's employer id. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+150	Entity's drug enforcement agency (DEA) number. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+152	Pharmacy processor number.
+Start: 01/01/1995
+153	Entity's id number. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+154	Relationship of surgeon & assistant surgeon.
+Start: 01/01/1995
+155	Entity's relationship to patient. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+156	Patient relationship to subscriber
+Start: 01/01/1995
+157	Entity's Gender. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+158	Entity's date of birth. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+159	Entity's date of death. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+160	Entity's marital status. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+161	Entity's employment status. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+162	Entity's health insurance claim number (HICN). Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+163	Entity's policy number. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+164	Entity's contract/member number. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+165	Entity's employer name, address and phone. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+166	Entity's employer name. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+167	Entity's employer address. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+168	Entity's employer phone number. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+169	Entity's employer id.
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+170	Entity's employee id. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+171	Other insurance coverage information (health, liability, auto, etc.).
+Start: 01/01/1995
+172	Other employer name, address and telephone number.
+Start: 01/01/1995
+173	Entity's name, address, phone, gender, DOB, marital status, employment status and relation to subscriber. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+174	Entity's student status. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+175	Entity's school name. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+176	Entity's school address. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+177	Transplant recipient's name, date of birth, gender, relationship to insured.
+Start: 01/01/1995 | Last Modified: 02/28/2000
+178	Submitted charges.
+Start: 01/01/1995
+179	Outside lab charges.
+Start: 01/01/1995
+180	Hospital s semi-private room rate.
+Start: 01/01/1995
+181	Hospital s room rate.
+Start: 01/01/1995
+182	Allowable/paid from other entities coverage NOTE: This code requires the use of an entity code.
+Start: 01/01/1995 | Last Modified: 01/24/2010
+183	Amount entity has paid. Note: This code requires use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 02/11/2010
+184	Purchase price for the rented durable medical equipment.
+Start: 01/01/1995
+185	Rental price for durable medical equipment.
+Start: 01/01/1995
+186	Purchase and rental price of durable medical equipment.
+Start: 01/01/1995
+187	Date(s) of service.
+Start: 01/01/1995
+188	Statement from-through dates.
+Start: 01/01/1995
+189	Facility admission date
+Start: 01/01/1995 | Last Modified: 10/31/2006
+190	Facility discharge date
+Start: 01/01/1995 | Last Modified: 10/31/2006
+191	Date of Last Menstrual Period (LMP)
+Start: 02/28/1997
+192	Date of first service for current series/symptom/illness.
+Start: 01/01/1995
+193	First consultation/evaluation date.
+Start: 02/28/1997
+194	Confinement dates.
+Start: 01/01/1995
+195	Unable to work dates/Disability Dates.
+Start: 01/01/1995 | Last Modified: 09/20/2009
+196	Return to work dates.
+Start: 01/01/1995
+197	Effective coverage date(s).
+Start: 01/01/1995
+198	Medicare effective date.
+Start: 01/01/1995
+199	Date of conception and expected date of delivery.
+Start: 01/01/1995
+200	Date of equipment return.
+Start: 01/01/1995
+201	Date of dental appliance prior placement.
+Start: 01/01/1995
+202	Date of dental prior replacement/reason for replacement.
+Start: 01/01/1995
+203	Date of dental appliance placed.
+Start: 01/01/1995
+204	Date dental canal(s) opened and date service completed.
+Start: 01/01/1995
+205	Date(s) dental root canal therapy previously performed.
+Start: 01/01/1995
+206	Most recent date of curettage, root planing, or periodontal surgery.
+Start: 01/01/1995
+207	Dental impression and seating date.
+Start: 01/01/1995
+208	Most recent date pacemaker was implanted.
+Start: 01/01/1995
+209	Most recent pacemaker battery change date.
+Start: 01/01/1995
+210	Date of the last x-ray.
+Start: 01/01/1995
+211	Date(s) of dialysis training provided to patient.
+Start: 01/01/1995
+212	Date of last routine dialysis.
+Start: 01/01/1995
+213	Date of first routine dialysis.
+Start: 01/01/1995
+214	Original date of prescription/orders/referral.
+Start: 02/28/1997
+215	Date of tooth extraction/evolution.
+Start: 01/01/1995
+216	Drug information.
+Start: 01/01/1995
+217	Drug name, strength and dosage form.
+Start: 01/01/1995
+218	NDC number.
+Start: 01/01/1995
+219	Prescription number.
+Start: 01/01/1995
+220	Drug product id number. (Use code 218)
+Start: 01/01/1995 | Last Modified: 10/17/2010 | Stop: 07/01/2011
+221	Drug days supply and dosage.
+Start: 01/01/1995 | Last Modified: 01/24/2010 | Stop: 01/01/2012
+222	Drug dispensing units and average wholesale price (AWP).
+Start: 01/01/1995
+223	Route of drug/myelogram administration.
+Start: 01/01/1995
+224	Anatomical location for joint injection.
+Start: 01/01/1995
+225	Anatomical location.
+Start: 01/01/1995
+226	Joint injection site.
+Start: 01/01/1995
+227	Hospital information.
+Start: 01/01/1995
+228	Type of bill for UB claim
+Start: 01/01/1995 | Last Modified: 10/31/2006
+229	Hospital admission source.
+Start: 01/01/1995
+230	Hospital admission hour.
+Start: 01/01/1995
+231	Hospital admission type.
+Start: 01/01/1995
+232	Admitting diagnosis.
+Start: 01/01/1995
+233	Hospital discharge hour.
+Start: 01/01/1995
+234	Patient discharge status.
+Start: 01/01/1995
+235	Units of blood furnished.
+Start: 01/01/1995
+236	Units of blood replaced.
+Start: 01/01/1995
+237	Units of deductible blood.
+Start: 01/01/1995
+238	Separate claim for mother/baby charges.
+Start: 01/01/1995
+239	Dental information.
+Start: 01/01/1995
+240	Tooth surface(s) involved.
+Start: 01/01/1995
+241	List of all missing teeth (upper and lower).
+Start: 01/01/1995
+242	Tooth numbers, surfaces, and/or quadrants involved.
+Start: 01/01/1995
+243	Months of dental treatment remaining.
+Start: 01/01/1995
+244	Tooth number or letter.
+Start: 01/01/1995
+245	Dental quadrant/arch.
+Start: 01/01/1995
+246	Total orthodontic service fee, initial appliance fee, monthly fee, length of service.
+Start: 01/01/1995
+247	Line information.
+Start: 01/01/1995
+248	Accident date, state, description and cause.
+Start: 01/01/1995 | Last Modified: 01/24/2010 | Stop: 01/01/2012
+249	Place of service.
+Start: 01/01/1995
+250	Type of service.
+Start: 01/01/1995
+251	Total anesthesia minutes.
+Start: 01/01/1995
+252	Entity's authorization/certification number. Note: This code requires the use of an Entity Code.
+Start: 01/01/1995 | Last Modified: 01/30/2011
+253	Procedure/revenue code for service(s) rendered. Use codes 454 or 455.
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 02/28/1997
+254	Principal diagnosis code.
+Start: 01/01/1995 | Last Modified: 01/30/2011
+255	Diagnosis code.
+Start: 01/01/1995
+256	DRG code(s).
+Start: 01/01/1995
+257	ADSM-III-R code for services rendered.
+Start: 01/01/1995
+258	Days/units for procedure/revenue code.
+Start: 01/01/1995
+259	Frequency of service.
+Start: 01/01/1995
+260	Length of medical necessity, including begin date.
+Start: 02/28/1997
+261	Obesity measurements.
+Start: 01/01/1995
+262	Type of surgery/service for which anesthesia was administered.
+Start: 01/01/1995
+263	Length of time for services rendered.
+Start: 01/01/1995
+264	Number of liters/minute & total hours/day for respiratory support.
+Start: 01/01/1995
+265	Number of lesions excised.
+Start: 01/01/1995
+266	Facility point of origin and destination - ambulance.
+Start: 01/01/1995
+267	Number of miles patient was transported.
+Start: 01/01/1995
+268	Location of durable medical equipment use.
+Start: 01/01/1995
+269	Length/size of laceration/tumor.
+Start: 01/01/1995
+270	Subluxation location.
+Start: 01/01/1995
+271	Number of spine segments.
+Start: 01/01/1995
+272	Oxygen contents for oxygen system rental.
+Start: 01/01/1995
+273	Weight.
+Start: 01/01/1995
+274	Height.
+Start: 01/01/1995
+275	Claim.
+Start: 01/01/1995
+276	UB04/HCFA-1450/1500 claim form
+Start: 01/01/1995 | Last Modified: 10/31/2006
+277	Paper claim.
+Start: 01/01/1995
+278	Signed claim form.
+Start: 01/01/1995 | Stop: 11/01/2011
+279	Claim/service must be itemized
+Start: 01/01/1995 | Last Modified: 10/17/2010
+280	Itemized claim by provider.
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to code 279
+281	Related confinement claim.
+Start: 01/01/1995
+282	Copy of prescription.
+Start: 01/01/1995
+283	Medicare entitlement information is required to determine primary coverage
+Start: 01/01/1995 | Last Modified: 01/27/2008
+284	Copy of Medicare ID card.
+Start: 01/01/1995
+285	Vouchers/explanation of benefits (EOB).
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to code 286
+286	Other payer's Explanation of Benefits/payment information.
+Start: 01/01/1995
+287	Medical necessity for service.
+Start: 01/01/1995
+288	Hospital late charges
+Start: 01/01/1995 | Last Modified: 10/17/2010
+289	Reason for late discharge.
+Start: 01/01/1995 | Stop: 11/01/2011
+290	Pre-existing information.
+Start: 01/01/1995
+291	Reason for termination of pregnancy.
+Start: 01/01/1995
+292	Purpose of family conference/therapy.
+Start: 01/01/1995
+293	Reason for physical therapy.
+Start: 01/01/1995
+294	Supporting documentation. Note: At least one other status code is required to identify the supporting documentation.
+Start: 01/01/1995 | Last Modified: 10/17/2010
+295	Attending physician report.
+Start: 01/01/1995
+296	Nurse's notes.
+Start: 01/01/1995
+297	Medical notes/report.
+Start: 02/28/1997
+298	Operative report.
+Start: 01/01/1995
+299	Emergency room notes/report.
+Start: 01/01/1995
+300	Lab/test report/notes/results.
+Start: 02/28/1997
+301	MRI report.
+Start: 01/01/1995
+302	Refer to codes 300 for lab notes and 311 for pathology notes
+Start: 01/01/1995 | Stop: 01/31/1997
+303	Physical therapy notes. Use code 297:6O (6 'OH' - not zero)
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 02/28/1997
+304	Reports for service.
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to codes 297, 298, 299, 300
+305	Radiology/x-ray reports and/or interpretation
+Start: 01/01/1995 | Last Modified: 01/30/2011
+306	Detailed description of service.
+Start: 01/01/1995
+307	Narrative with pocket depth chart.
+Start: 01/01/1995
+308	Discharge summary.
+Start: 01/01/1995
+309	Code was duplicate of code 299
+Start: 01/01/1995 | Stop: 01/31/1997
+310	Progress notes for the six months prior to statement date.
+Start: 01/01/1995
+311	Pathology notes/report.
+Start: 01/01/1995
+312	Dental charting.
+Start: 01/01/1995
+313	Bridgework information.
+Start: 01/01/1995
+314	Dental records for this service.
+Start: 01/01/1995
+315	Past perio treatment history.
+Start: 01/01/1995
+316	Complete medical history.
+Start: 01/01/1995
+317	Patient's medical records.
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to code 297 or other specific report type codes
+318	X-rays/radiology films
+Start: 01/01/1995 | Last Modified: 10/17/2010
+319	Pre/post-operative x-rays/photographs.
+Start: 02/28/1997
+320	Study models.
+Start: 01/01/1995
+321	Radiographs or models. (Use codes 318 and/or 320)
+Start: 01/01/1995 | Last Modified: 10/17/2010 | Stop: 07/01/2011
+322	Recent Full Mouth X-rays
+Start: 01/01/1995 | Last Modified: 10/17/2010
+323	Study models, x-rays, and/or narrative.
+Start: 01/01/1995
+324	Recent x-ray of treatment area and/or narrative.
+Start: 01/01/1995
+325	Recent fm x-rays and/or narrative.
+Start: 01/01/1995
+326	Copy of transplant acquisition invoice.
+Start: 01/01/1995
+327	Periodontal case type diagnosis and recent pocket depth chart with narrative.
+Start: 01/01/1995
+328	Speech therapy notes. Use code 297:6R
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 02/28/1997
+329	Exercise notes.
+Start: 01/01/1995
+330	Occupational notes.
+Start: 01/01/1995
+331	History and physical.
+Start: 01/01/1995 | Last Modified: 08/01/2007
+332	Authorization/certification (include period covered). (Use code 252)
+Start: 02/28/1997 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+333	Patient release of information authorization.
+Start: 01/01/1995
+334	Oxygen certification.
+Start: 01/01/1995
+335	Durable medical equipment certification.
+Start: 01/01/1995
+336	Chiropractic certification.
+Start: 01/01/1995
+337	Ambulance certification/documentation.
+Start: 01/01/1995
+338	Home health certification. Use code 332:4Y
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 02/28/1997
+339	Enteral/parenteral certification.
+Start: 01/01/1995
+340	Pacemaker certification.
+Start: 01/01/1995
+341	Private duty nursing certification.
+Start: 01/01/1995
+342	Podiatric certification.
+Start: 01/01/1995
+343	Documentation that facility is state licensed and Medicare approved as a surgical facility.
+Start: 01/01/1995
+344	Documentation that provider of physical therapy is Medicare Part B approved.
+Start: 01/01/1995
+345	Treatment plan for service/diagnosis
+Start: 01/01/1995
+346	Proposed treatment plan for next 6 months.
+Start: 01/01/1995
+347	Refer to code 345 for treatment plan and code 282 for prescription
+Start: 01/01/1995 | Stop: 01/31/1997
+348	Chiropractic treatment plan. (Use 345:QL)
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+349	Psychiatric treatment plan. Use codes 345:5I, 5J, 5K, 5L, 5M, 5N, 5O (5 'OH' - not zero), 5P
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 02/28/1997
+350	Speech pathology treatment plan. Use code 345:6R
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 02/28/1997
+351	Physical/occupational therapy treatment plan. Use codes 345:6O (6 'OH' - not zero), 6N
+Start: 01/01/1995 | Last Modified: 07/09/2007 | Stop: 02/28/1997
+352	Duration of treatment plan.
+Start: 01/01/1995
+353	Orthodontics treatment plan.
+Start: 01/01/1995
+354	Treatment plan for replacement of remaining missing teeth.
+Start: 01/01/1995
+355	Has claim been paid?
+Start: 01/01/1995 | Stop: 11/01/2011
+356	Was blood furnished?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to code 235
+357	Has or will blood be replaced?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to code 236
+358	Does provider accept assignment of benefits? (Use code 589)
+Start: 01/01/1995 | Last Modified: 10/17/2010 | Stop: 07/01/2011
+359	Is there a release of information signature on file? (Use code 333)
+Start: 01/01/1995 | Last Modified: 10/17/2010 | Stop: 07/01/2011
+360	Benefits Assignment Certification Indicator
+Start: 01/01/1995 | Last Modified: 10/17/2010
+361	Is there other insurance?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to codes 171 and 550
+362	Is the dental patient covered by medical insurance?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to code 171
+363	Possible Workers' Compensation
+Start: 01/01/1995 | Last Modified: 10/17/2010
+364	Is accident/illness/condition employment related?
+Start: 01/01/1995
+365	Is service the result of an accident?
+Start: 01/01/1995
+366	Is injury due to auto accident?
+Start: 01/01/1995
+367	Is service performed for a recurring condition or new condition?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to code 397
+368	Is medical doctor (MD) or doctor of osteopath (DO) on staff of this facility?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to code 676
+369	Does patient condition preclude use of ordinary bed?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to codes 287, 335
+370	Can patient operate controls of bed?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to codes 287, 335
+371	Is patient confined to room?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to codes 287, 335, 527
+372	Is patient confined to bed?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to codes 287, 335, 527
+373	Is patient an insulin diabetic?
+Start: 01/01/1995 | Stop: 11/01/2011
+374	Is prescribed lenses a result of cataract surgery?
+Start: 01/01/1995
+375	Was refraction performed?
+Start: 01/01/1995
+376	Was charge for ambulance for a round-trip?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to code 453
+377	Was durable medical equipment purchased new or used?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to codes 184, 185, 186, 335
+378	Is pacemaker temporary or permanent?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to code 340
+379	Were services performed supervised by a physician?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to codes 453, 454, 666 & procedure code
+380	CRNA supervision/medical direction.
+Start: 01/01/1995 | Last Modified: 10/17/2010
+381	Is drug generic?
+Start: 01/01/1995 | Stop: 11/01/2011
+Notes: Refer to code 216
+382	Did provider authorize generic or brand name dispensing?
+Start: 01/01/1995
+383	Nerve block use (surgery vs. pain management)
+Start: 01/01/1995 | Last Modified: 10/17/2010
+384	Is prosthesis/crown/inlay placement an initial placement or a replacement?
+Start: 01/01/1995
+385	Is appliance upper or lower arch & is appliance fixed or removable?
+Start: 01/01/1995
+386	Orthodontic Treatment/Purpose Indicator
+Start: 01/01/1995 | Last Modified: 10/17/2010
+387	Date patient last examined by entity. Note: This code requires use of an Entity Code.
+Start: 02/28/1997 | Last Modified: 02/11/2010
+388	Date post-operative care assumed
+Start: 02/28/1997
+389	Date post-operative care relinquished
+Start: 02/28/1997
+390	Date of most recent medical event necessitating service(s)
+Start: 02/28/1997
+391	Date(s) dialysis conducted
+Start: 02/28/1997
+392	Date(s) of blood transfusion(s)
+Start: 02/28/1997 | Stop: 11/01/2011
+393	Date of previous pacemaker check
+Start: 02/28/1997 | Stop: 11/01/2011
+394	Date(s) of most recent hospitalization related to service
+Start: 02/28/1997
+395	Date entity signed certification/recertification Note: This code requires use of an Entity Code.
+Start: 02/28/1997 | Last Modified: 02/11/2010
+396	Date home dialysis began
+Start: 02/28/1997
+397	Date of onset/exacerbation of illness/condition
+Start: 02/28/1997
+398	Visual field test results
+Start: 02/28/1997
+399	Report of prior testing related to this service, including dates
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 417
+400	Claim is out of balance
+Start: 02/28/1997
+401	Source of payment is not valid
+Start: 02/28/1997
+402	Amount must be greater than zero. Note: At least one other status code is required to identify which amount element is in error.
+Start: 02/28/1997 | Last Modified: 09/20/2009
+403	Entity referral notes/orders/prescription
+Start: 02/28/1997
+404	Specific findings, complaints, or symptoms necessitating service
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to codes 287, 488
+405	Summary of services
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 306
+406	Brief medical history as related to service(s)
+Start: 02/28/1997
+407	Complications/mitigating circumstances
+Start: 02/28/1997
+408	Initial certification
+Start: 02/28/1997
+409	Medication logs/records (including medication therapy)
+Start: 02/28/1997
+410	Explain differences between treatment plan and patient's condition
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 297 or other specific report type codes
+411	Medical necessity for non-routine service(s)
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 287
+412	Medical records to substantiate decision of non-coverage
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 297 or other specific report type codes
+413	Explain/justify differences between treatment plan and services rendered.
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 297 or other specific report type codes
+414	Necessity for concurrent care (more than one physician treating the patient)
+Start: 02/28/1997 | Last Modified: 10/17/2010
+415	Justify services outside composite rate
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 287
+416	Verification of patient's ability to retain and use information
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 297 or other specific report type codes
+417	Prior testing, including result(s) and date(s) as related to service(s)
+Start: 02/28/1997
+418	Indicating why medications cannot be taken orally
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 297 or other specific report type codes
+419	Individual test(s) comprising the panel and the charges for each test
+Start: 02/28/1997
+420	Name, dosage and medical justification of contrast material used for radiology procedure
+Start: 02/28/1997
+421	Medical review attachment/information for service(s)
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 297 or other specific report type codes
+422	Homebound status
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 575
+423	Prognosis
+Start: 02/28/1997 | Last Modified: 07/09/2007 | Stop: 01/01/2008
+424	Statement of non-coverage including itemized bill
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 279 & 286
+425	Itemize non-covered services
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 279 & 286
+426	All current diagnoses
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 255, 232 & 488
+427	Emergency care provided during transport
+Start: 02/28/1997 | Stop: 11/01/2011
+428	Reason for transport by ambulance
+Start: 02/28/1997
+429	Loaded miles and charges for transport to nearest facility with appropriate services
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to codes 267, 178, 430
+430	Nearest appropriate facility
+Start: 02/28/1997
+431	Patient's condition/functional status at time of service.
+Start: 02/28/1997 | Last Modified: 10/17/2010
+432	Date benefits exhausted
+Start: 02/28/1997
+433	Copy of patient revocation of hospice benefits
+Start: 02/28/1997
+434	Reasons for more than one transfer per entitlement period
+Start: 02/28/1997
+435	Notice of Admission
+Start: 02/28/1997
+436	Short term goals
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 345
+437	Long term goals
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 345
+438	Number of patients attending session
+Start: 02/28/1997 | Stop: 11/01/2011
+439	Size, depth, amount, and type of drainage wounds
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 297 or other specific report type codes
+440	why non-skilled caregiver has not been taught procedure
+Start: 02/28/1997 | Stop: 11/01/2011
+441	Entity professional qualification for service(s)
+Start: 02/28/1997
+442	Modalities of service
+Start: 02/28/1997
+443	Initial evaluation report
+Start: 02/28/1997
+444	Method used to obtain test sample
+Start: 02/28/1997 | Stop: 11/01/2011
+445	Explain why hearing loss not correctable by hearing aid
+Start: 02/28/1997 | Stop: 11/01/2011
+Notes: Refer to code 287
+446	Documentation from prior claim(s) related to service(s)
+Start: 02/28/1997 | Stop: 11/01/2011
+447	Plan of teaching
+Start: 02/28/1997 | Stop: 11/01/2011
+448	Invalid billing combination. See STC12 for details. This code should only be used to indicate an inconsistency between two or more data elements on the claim. A detailed explanation is required in STC12 when this code is used.
+Start: 02/28/1997 | Last Modified: 01/24/2010 | Stop: 01/01/2012
+449	Projected date to discontinue service(s)
+Start: 02/28/1997
+450	Awaiting spend down determination
+Start: 02/28/1997
+451	Preoperative and post-operative diagnosis
+Start: 02/28/1997
+452	Total visits in total number of hours/day and total number of hours/week
+Start: 02/28/1997
+453	Procedure Code Modifier(s) for Service(s) Rendered
+Start: 02/28/1997
+454	Procedure code for services rendered.
+Start: 02/28/1997
+455	Revenue code for services rendered.
+Start: 02/28/1997
+456	Covered Day(s)
+Start: 02/28/1997
+457	Non-Covered Day(s)
+Start: 02/28/1997
+458	Coinsurance Day(s)
+Start: 02/28/1997
+459	Lifetime Reserve Day(s)
+Start: 02/28/1997
+460	NUBC Condition Code(s)
+Start: 02/28/1997
+461	NUBC Occurrence Code(s) and Date(s)
+Start: 02/28/1997 | Last Modified: 01/24/2010 | Stop: 01/01/2012
+462	NUBC Occurrence Span Code(s) and Date(s)
+Start: 02/28/1997 | Last Modified: 01/24/2010 | Stop: 01/01/2012
+463	NUBC Value Code(s) and/or Amount(s)
+Start: 02/28/1997 | Last Modified: 01/24/2010 | Stop: 01/01/2012
+464	Payer Assigned Claim Control Number
+Start: 02/28/1997 | Last Modified: 10/31/2004
+465	Principal Procedure Code for Service(s) Rendered
+Start: 02/28/1997
+466	Entity's Original Signature. Note: This code requires use of an Entity Code.
+Start: 02/28/1997 | Last Modified: 01/30/2011
+467	Entity Signature Date. Note: This code requires use of an Entity Code.
+Start: 02/28/1997 | Last Modified: 02/11/2010
+468	Patient Signature Source
+Start: 02/28/1997
+469	Purchase Service Charge
+Start: 02/28/1997
+470	Was service purchased from another entity? Note: This code requires use of an Entity Code.
+Start: 02/28/1997 | Last Modified: 02/11/2010
+471	Were services related to an emergency?
+Start: 02/28/1997
+472	Ambulance Run Sheet
+Start: 02/28/1997
+473	Missing or invalid lab indicator
+Start: 06/30/1998
+474	Procedure code and patient gender mismatch
+Start: 06/30/1998 | Last Modified: 02/29/2000
+475	Procedure code not valid for patient age
+Start: 06/30/1998 | Last Modified: 02/29/2000
+476	Missing or invalid units of service
+Start: 06/30/1998
+477	Diagnosis code pointer is missing or invalid
+Start: 06/30/1998
+478	Claim submitter's identifier
+Start: 06/30/1998 | Last Modified: 01/24/2010
+479	Other Carrier payer ID is missing or invalid
+Start: 06/30/1998
+480	Entity's claim filing indicator. Note: This code requires use of an Entity Code.
+Start: 06/30/1998 | Last Modified: 06/06/2010
+481	Claim/submission format is invalid.
+Start: 10/31/1998
+482	Date Error, Century Missing
+Start: 02/28/1999 | Last Modified: 09/20/2009 | Stop: 10/01/2010
+483	Maximum coverage amount met or exceeded for benefit period.
+Start: 06/30/1999
+484	Business Application Currently Not Available
+Start: 02/29/2000
+485	More information available than can be returned in real time mode. Narrow your current search criteria.
+Start: 02/28/2001
+486	Principal Procedure Date
+Start: 10/31/2001 | Last Modified: 07/01/2009
+487	Claim not found, claim should have been submitted to/through 'entity'. Note: This code requires use of an Entity Code.
+Start: 02/28/2002 | Last Modified: 02/11/2010
+488	Diagnosis code(s) for the services rendered.
+Start: 06/30/2002
+489	Attachment Control Number
+Start: 10/31/2002
+490	Other Procedure Code for Service(s) Rendered
+Start: 02/28/2003
+491	Entity not eligible for encounter submission. Note: This code requires use of an Entity Code.
+Start: 02/28/2003 | Last Modified: 02/11/2010
+492	Other Procedure Date
+Start: 02/28/2003
+493	Version/Release/Industry ID code not currently supported by information holder
+Start: 02/28/2003
+494	Real-Time requests not supported by the information holder, resubmit as batch request
+Start: 02/28/2003
+495	Requests for re-adjudication must reference the newly assigned payer claim control number for this previously adjusted claim. Correct the payer claim control number and re-submit.
+Start: 10/31/2003
+496	Submitter not approved for electronic claim submissions on behalf of this entity. Note: This code requires use of an Entity Code.
+Start: 02/29/2004 | Last Modified: 02/11/2010
+497	Sales tax not paid
+Start: 06/30/2004
+498	Maximum leave days exhausted
+Start: 06/30/2004
+499	No rate on file with the payer for this service for this entity Note: This code requires use of an Entity Code.
+Start: 06/30/2004 | Last Modified: 02/11/2010
+500	Entity's Postal/Zip Code. Note: This code requires use of an Entity Code.
+Start: 06/30/2004 | Last Modified: 02/11/2010
+501	Entity's State/Province. Note: This code requires use of an Entity Code.
+Start: 06/30/2004 | Last Modified: 02/11/2010
+502	Entity's City. Note: This code requires use of an Entity Code.
+Start: 06/30/2004 | Last Modified: 02/11/2010
+503	Entity's Street Address. Note: This code requires use of an Entity Code.
+Start: 06/30/2004 | Last Modified: 02/11/2010
+504	Entity's Last Name. Note: This code requires use of an Entity Code.
+Start: 06/30/2004 | Last Modified: 02/11/2010
+505	Entity's First Name. Note: This code requires use of an Entity Code.
+Start: 06/30/2004 | Last Modified: 02/11/2010
+506	Entity is changing processor/clearinghouse. This claim must be submitted to the new processor/clearinghouse. Note: This code requires use of an Entity Code.
+Start: 06/30/2004 | Last Modified: 02/11/2010
+507	HCPCS
+Start: 10/31/2004
+508	ICD9 NOTE: At least one other status code is required to identify the related procedure code or diagnosis code.
+Start: 10/31/2004 | Last Modified: 07/01/2009
+509	External Cause of Injury Code (E-code).
+Start: 10/31/2004 | Last Modified: 01/30/2011
+510	Future date. Note: At least one other status code is required to identify the data element in error.
+Start: 10/31/2004 | Last Modified: 09/20/2009
+511	Invalid character. Note: At least one other status code is required to identify the data element in error.
+Start: 10/31/2004 | Last Modified: 09/20/2009
+512	Length invalid for receiver's application system. Note: At least one other status code is required to identify the data element in error.
+Start: 10/31/2004 | Last Modified: 09/20/2009
+513	HIPPS Rate Code for services Rendered
+Start: 10/31/2004
+514	Entity's Middle Name Note: This code requires use of an Entity Code.
+Start: 10/31/2004 | Last Modified: 01/30/2011
+515	Managed Care review
+Start: 10/31/2004
+516	Other Entity's Adjudication or Payment/Remittance Date. Note: An Entity code is required to identify the Other Payer Entity, i.e. primary, secondary.
+Start: 10/31/2004 | Last Modified: 11/29/2009
+517	Adjusted Repriced Claim Reference Number
+Start: 10/31/2004
+518	Adjusted Repriced Line item Reference Number
+Start: 10/31/2004
+519	Adjustment Amount
+Start: 10/31/2004
+520	Adjustment Quantity
+Start: 10/31/2004
+521	Adjustment Reason Code
+Start: 10/31/2004
+522	Anesthesia Modifying Units
+Start: 10/31/2004
+523	Anesthesia Unit Count
+Start: 10/31/2004
+524	Arterial Blood Gas Quantity
+Start: 10/31/2004
+525	Begin Therapy Date
+Start: 10/31/2004
+526	Bundled or Unbundled Line Number
+Start: 10/31/2004
+527	Certification Condition Indicator
+Start: 10/31/2004
+528	Certification Period Projected Visit Count
+Start: 10/31/2004
+529	Certification Revision Date
+Start: 10/31/2004
+530	Claim Adjustment Indicator
+Start: 10/31/2004
+531	Claim Disproportinate Share Amount
+Start: 10/31/2004
+532	Claim DRG Amount
+Start: 10/31/2004
+533	Claim DRG Outlier Amount
+Start: 10/31/2004
+534	Claim ESRD Payment Amount
+Start: 10/31/2004
+535	Claim Frequency Code
+Start: 10/31/2004
+536	Claim Indirect Teaching Amount
+Start: 10/31/2004
+537	Claim MSP Pass-through Amount
+Start: 10/31/2004
+538	Claim or Encounter Identifier
+Start: 10/31/2004
+539	Claim PPS Capital Amount
+Start: 10/31/2004
+540	Claim PPS Capital Outlier Amount
+Start: 10/31/2004
+541	Claim Submission Reason Code
+Start: 10/31/2004
+542	Claim Total Denied Charge Amount
+Start: 10/31/2004
+543	Clearinghouse or Value Added Network Trace
+Start: 10/31/2004
+544	Clinical Laboratory Improvement Amendment
+Start: 10/31/2004
+545	Contract Amount
+Start: 10/31/2004
+546	Contract Code
+Start: 10/31/2004
+547	Contract Percentage
+Start: 10/31/2004
+548	Contract Type Code
+Start: 10/31/2004
+549	Contract Version Identifier
+Start: 10/31/2004
+550	Coordination of Benefits Code
+Start: 10/31/2004
+551	Coordination of Benefits Total Submitted Charge
+Start: 10/31/2004
+552	Cost Report Day Count
+Start: 10/31/2004
+553	Covered Amount
+Start: 10/31/2004
+554	Date Claim Paid
+Start: 10/31/2004
+555	Delay Reason Code
+Start: 10/31/2004
+556	Demonstration Project Identifier
+Start: 10/31/2004
+557	Diagnosis Date
+Start: 10/31/2004
+558	Discount Amount
+Start: 10/31/2004
+559	Document Control Identifier
+Start: 10/31/2004
+560	Entity's Additional/Secondary Identifier. Note: This code requires use of an Entity Code.
+Start: 10/31/2004 | Last Modified: 02/11/2010
+561	Entity's Contact Name. Note: This code requires use of an Entity Code.
+Start: 10/31/2004 | Last Modified: 02/11/2010
+562	Entity's National Provider Identifier (NPI). Note: This code requires use of an Entity Code.
+Start: 10/31/2004 | Last Modified: 02/11/2010
+563	Entity's Tax Amount. Note: This code requires use of an Entity Code.
+Start: 10/31/2004 | Last Modified: 02/11/2010
+564	EPSDT Indicator
+Start: 10/31/2004
+565	Estimated Claim Due Amount
+Start: 10/31/2004
+566	Exception Code
+Start: 10/31/2004
+567	Facility Code Qualifier
+Start: 10/31/2004
+568	Family Planning Indicator
+Start: 10/31/2004
+569	Fixed Format Information
+Start: 10/31/2004
+570	Free Form Message Text
+Start: 10/31/2004 | Stop: 01/01/2013
+571	Frequency Count
+Start: 10/31/2004
+572	Frequency Period
+Start: 10/31/2004
+573	Functional Limitation Code
+Start: 10/31/2004
+574	HCPCS Payable Amount Home Health
+Start: 10/31/2004
+575	Homebound Indicator
+Start: 10/31/2004
+576	Immunization Batch Number
+Start: 10/31/2004
+577	Industry Code
+Start: 10/31/2004
+578	Insurance Type Code
+Start: 10/31/2004
+579	Investigational Device Exemption Identifier
+Start: 10/31/2004
+580	Last Certification Date
+Start: 10/31/2004
+581	Last Worked Date
+Start: 10/31/2004
+582	Lifetime Psychiatric Days Count
+Start: 10/31/2004
+583	Line Item Charge Amount
+Start: 10/31/2004
+584	Line Item Control Number
+Start: 10/31/2004
+585	Denied Charge or Non-covered Charge
+Start: 10/31/2004 | Last Modified: 07/09/2007
+586	Line Note Text
+Start: 10/31/2004
+587	Measurement Reference Identification Code
+Start: 10/31/2004
+588	Medical Record Number
+Start: 10/31/2004
+589	Provider Accept Assignment Code
+Start: 10/31/2004 | Last Modified: 10/17/2010
+590	Medicare Coverage Indicator
+Start: 10/31/2004
+591	Medicare Paid at 100% Amount
+Start: 10/31/2004
+592	Medicare Paid at 80% Amount
+Start: 10/31/2004
+593	Medicare Section 4081 Indicator
+Start: 10/31/2004
+594	Mental Status Code
+Start: 10/31/2004
+595	Monthly Treatment Count
+Start: 10/31/2004
+596	Non-covered Charge Amount
+Start: 10/31/2004
+597	Non-payable Professional Component Amount
+Start: 10/31/2004
+598	Non-payable Professional Component Billed Amount
+Start: 10/31/2004
+599	Note Reference Code
+Start: 10/31/2004
+600	Oxygen Saturation Qty
+Start: 10/31/2004
+601	Oxygen Test Condition Code
+Start: 10/31/2004
+602	Oxygen Test Date
+Start: 10/31/2004
+603	Old Capital Amount
+Start: 10/31/2004
+604	Originator Application Transaction Identifier
+Start: 10/31/2004
+605	Orthodontic Treatment Months Count
+Start: 10/31/2004
+606	Paid From Part A Medicare Trust Fund Amount
+Start: 10/31/2004
+607	Paid From Part B Medicare Trust Fund Amount
+Start: 10/31/2004
+608	Paid Service Unit Count
+Start: 10/31/2004
+609	Participation Agreement
+Start: 10/31/2004
+610	Patient Discharge Facility Type Code
+Start: 10/31/2004
+611	Peer Review Authorization Number
+Start: 10/31/2004
+612	Per Day Limit Amount
+Start: 10/31/2004
+613	Physician Contact Date
+Start: 10/31/2004
+614	Physician Order Date
+Start: 10/31/2004
+615	Policy Compliance Code
+Start: 10/31/2004
+616	Policy Name
+Start: 10/31/2004
+617	Postage Claimed Amount
+Start: 10/31/2004
+618	PPS-Capital DSH DRG Amount
+Start: 10/31/2004
+619	PPS-Capital Exception Amount
+Start: 10/31/2004
+620	PPS-Capital FSP DRG Amount
+Start: 10/31/2004
+621	PPS-Capital HSP DRG Amount
+Start: 10/31/2004
+622	PPS-Capital IME Amount
+Start: 10/31/2004
+623	PPS-Operating Federal Specific DRG Amount
+Start: 10/31/2004
+624	PPS-Operating Hospital Specific DRG Amount
+Start: 10/31/2004
+625	Predetermination of Benefits Identifier
+Start: 10/31/2004
+626	Pregnancy Indicator
+Start: 10/31/2004
+627	Pre-Tax Claim Amount
+Start: 10/31/2004
+628	Pricing Methodology
+Start: 10/31/2004
+629	Property Casualty Claim Number
+Start: 10/31/2004
+630	Referring CLIA Number
+Start: 10/31/2004
+631	Reimbursement Rate
+Start: 10/31/2004
+632	Reject Reason Code
+Start: 10/31/2004
+633	Related Causes Code (Accident, auto accident, employment)
+Start: 10/31/2004 | Last Modified: 10/17/2010
+634	Remark Code
+Start: 10/31/2004
+635	Repriced Ambulatory Patient Group Code
+Start: 10/31/2004
+636	Repriced Line Item Reference Number
+Start: 10/31/2004
+637	Repriced Saving Amount
+Start: 10/31/2004
+638	Repricing Per Diem or Flat Rate Amount
+Start: 10/31/2004
+639	Responsibility Amount
+Start: 10/31/2004
+640	Sales Tax Amount
+Start: 10/31/2004
+641	Service Adjudication or Payment Date. Note: Use code 516.
+Start: 10/31/2004 | Last Modified: 09/20/2009 | Stop: 10/01/2010
+642	Service Authorization Exception Code
+Start: 10/31/2004
+643	Service Line Paid Amount
+Start: 10/31/2004
+644	Service Line Rate
+Start: 10/31/2004
+645	Service Tax Amount
+Start: 10/31/2004
+646	Ship, Delivery or Calendar Pattern Code
+Start: 10/31/2004
+647	Shipped Date
+Start: 10/31/2004
+648	Similar Illness or Symptom Date
+Start: 10/31/2004
+649	Skilled Nursing Facility Indicator
+Start: 10/31/2004
+650	Special Program Indicator
+Start: 10/31/2004
+651	State Industrial Accident Provider Number
+Start: 10/31/2004
+652	Terms Discount Percentage
+Start: 10/31/2004
+653	Test Performed Date
+Start: 10/31/2004
+654	Total Denied Charge Amount
+Start: 10/31/2004
+655	Total Medicare Paid Amount
+Start: 10/31/2004
+656	Total Visits Projected This Certification Count
+Start: 10/31/2004
+657	Total Visits Rendered Count
+Start: 10/31/2004
+658	Treatment Code
+Start: 10/31/2004
+659	Unit or Basis for Measurement Code
+Start: 10/31/2004
+660	Universal Product Number
+Start: 10/31/2004
+661	Visits Prior to Recertification Date Count CR702
+Start: 10/31/2004
+662	X-ray Availability Indicator
+Start: 10/31/2004
+663	Entity's Group Name. Note: This code requires use of an Entity Code.
+Start: 10/31/2004 | Last Modified: 02/11/2010
+664	Orthodontic Banding Date
+Start: 10/31/2004
+665	Surgery Date
+Start: 10/31/2004
+666	Surgical Procedure Code
+Start: 10/31/2004
+667	Real-Time requests not supported by the information holder, do not resubmit
+Start: 02/28/2005
+668	Missing Endodontics treatment history and prognosis
+Start: 06/30/2005
+669	Dental service narrative needed.
+Start: 10/31/2005
+670	Funds applied from a consumer spending account such as consumer directed/driven health plan (CDHP), Health savings account (H S A) and or other similar accounts
+Start: 06/30/2006 | Last Modified: 02/28/2007
+671	Funds may be available from a consumer spending account such as consumer directed/driven health plan (CDHP), Health savings account (H S A) and or other similar accounts
+Start: 06/30/2006 | Last Modified: 02/28/2007
+672	Other Payer's payment information is out of balance
+Start: 10/31/2006
+673	Patient Reason for Visit
+Start: 10/31/2006
+674	Authorization exceeded
+Start: 10/31/2006
+675	Facility admission through discharge dates
+Start: 10/31/2006
+676	Entity possibly compensated by facility. Note: This code requires use of an Entity Code.
+Start: 10/31/2006 | Last Modified: 02/11/2010
+677	Entity not affiliated. Note: This code requires use of an Entity Code.
+Start: 10/31/2006 | Last Modified: 02/11/2010
+678	Revenue code and patient gender mismatch
+Start: 10/31/2006
+679	Submit newborn services on mother's claim
+Start: 10/31/2006
+680	Entity's Country. Note: This code requires use of an Entity Code.
+Start: 10/31/2006 | Last Modified: 02/11/2010
+681	Claim currency not supported
+Start: 10/31/2006
+682	Cosmetic procedure
+Start: 02/28/2007
+683	Awaiting Associated Hospital Claims
+Start: 02/28/2007
+684	Rejected. Syntax error noted for this claim/service/inquiry. See Functional or Implementation Acknowledgement for details. (Note: Only for use to reject claims or status requests in transactions that were 'accepted with errors' on a 997 or 999 Acknowledgement.)
+Start: 11/05/2007
+685	Claim could not complete adjudication in real time. Claim will continue processing in a batch mode. Do not resubmit.
+Start: 01/27/2008
+686	The claim/ encounter has completed the adjudication cycle and the entire claim has been voided
+Start: 01/27/2008
+687	Claim estimation can not be completed in real time. Do not resubmit.
+Start: 01/27/2008
+688	Present on Admission Indicator for reported diagnosis code(s).
+Start: 01/27/2008
+689	Entity was unable to respond within the expected time frame. Note: This code requires use of an Entity Code.
+Start: 06/01/2008 | Last Modified: 02/11/2010
+690	Multiple claims or estimate requests cannot be processed in real time.
+Start: 06/01/2008
+691	Multiple claim status requests cannot be processed in real time.
+Start: 06/01/2008
+692	Contracted funding agreement-Subscriber is employed by the provider of services
+Start: 09/21/2008
+693	Amount must be greater than or equal to zero. Note: At least one other status code is required to identify which amount element is in error.
+Start: 01/25/2009
+694	Amount must not be equal to zero. Note: At least one other status code is required to identify which amount element is in error.
+Start: 01/25/2009
+695	Entity's Country Subdivision Code. Note: This code requires use of an Entity Code.
+Start: 01/25/2009 | Last Modified: 02/11/2010
+696	Claim Adjustment Group Code.
+Start: 01/25/2009
+697	Invalid Decimal Precision. Note: At least one other status code is required to identify the data element in error.
+Start: 07/01/2009
+698	Form Type Identification
+Start: 07/01/2009
+699	Question/Response from Supporting Documentation Form
+Start: 07/01/2009
+700	ICD10. Note: At least one other status code is required to identify the related procedure code or diagnosis code.
+Start: 07/01/2009
+701	Initial Treatment Date
+Start: 07/01/2009
+702	Repriced Claim Reference Number
+Start: 11/01/2009
+703	Advanced Billing Concepts (ABC) code
+Start: 01/24/2010
+704	Claim Note Text
+Start: 01/24/2010
+705	Repriced Allowed Amount
+Start: 01/24/2010
+706	Repriced Approved Amount
+Start: 01/24/2010
+707	Repriced Approved Ambulatory Patient Group Amount
+Start: 01/24/2010
+708	Repriced Approved Revenue Code
+Start: 01/24/2010
+709	Repriced Approved Service Unit Count
+Start: 01/24/2010
+710	Line Adjudication Information. Note: At least one other status code is required to identify the data element in error.
+Start: 01/24/2010
+711	Stretcher purpose
+Start: 01/24/2010
+712	Obstetric Additional Units
+Start: 01/24/2010
+713	Patient Condition Description
+Start: 01/24/2010
+714	Care Plan Oversight Number
+Start: 01/24/2010
+715	Acute Manifestation Date
+Start: 01/24/2010
+716	Repriced Approved DRG Code
+Start: 01/24/2010
+717	This claim has been split for processing.
+Start: 01/24/2010
+718	Claim/service not submitted within the required timeframe (timely filing).
+Start: 01/24/2010
+719	NUBC Occurrence Code(s)
+Start: 01/24/2010
+720	NUBC Occurrence Code Date(s)
+Start: 01/24/2010
+721	NUBC Occurrence Span Code(s)
+Start: 01/24/2010
+722	NUBC Occurrence Span Code Date(s)
+Start: 01/24/2010
+723	Drug days supply
+Start: 01/24/2010
+724	Drug dosage
+Start: 01/24/2010
+725	NUBC Value Code(s)
+Start: 01/24/2010
+726	NUBC Value Code Amount(s)
+Start: 01/24/2010
+727	Accident date
+Start: 01/24/2010
+728	Accident state
+Start: 01/24/2010
+729	Accident description
+Start: 01/24/2010
+730	Accident cause
+Start: 01/24/2010
+731	Measurement value/test result
+Start: 01/24/2010
+732	Information submitted inconsistent with billing guidelines. Note: At least one other status code is required to identify the inconsistent information.
+Start: 01/24/2010
+733	Prefix for entity's contract/member number.
+Start: 01/24/2010
+734	Verifying premium payment
+Start: 06/06/2010
+735	This service/claim is included in the allowance for another service or claim.
+Start: 06/06/2010
+736	A related or qualifying service/claim has not been received/adjudicated.
+Start: 06/06/2010
+737	Current Dental Terminology (CDT) Code
+Start: 06/06/2010
+738	Home Infusion EDI Coalition (HEIC) Product/Service Code
+Start: 06/06/2010
+739	Jurisdiction Specific Procedure or Supply Code
+Start: 06/06/2010
+740	Drop-Off Location
+Start: 06/06/2010
+741	Entity must be a person. Note: This code requires use of an Entity Code.
+Start: 06/06/2010
+742	Payer Responsibility Sequence Number Code
+Start: 06/06/2010
+743	Entitys credential/enrollment information. Note: This code requires use of an Entity Code.
+Start: 10/17/2010
+744	Services/charges related to the treatment of a hospital-acquired condition or preventable medical error.
+Start: 10/17/2010
+745	Identifier Qualifier Note: At least one other status code is required to identify the specific identifier qualifier in error.
+Start: 10/17/2010
+746	Duplicate Submission Note: use only at the information receiver level in the Health Care Claim Acknowledgement transaction.
+Start: 10/17/2010
+747	Hospice Employee Indicator
+Start: 10/17/2010
+748	Corrected Data Note: Requires a second status code to identify the corrected data.
+Start: 10/17/2010
+749	Date of Injury/Illness
+Start: 10/17/2010
+750	Auto Accident State or Province Code
+Start: 10/17/2010 | Last Modified: 01/30/2011
+751	Ambulance Pick-up State or Province Code
+Start: 10/17/2010 | Last Modified: 01/30/2011
+752	Ambulance Drop-off State or Province Code
+Start: 10/17/2010 | Last Modified: 01/30/2011
+753	Co-pay status code.
+Start: 01/30/2011
+754	Entity Name Suffix. Note: This code requires the use of an Entity Code.
+Start: 01/30/2011
+755	Entity's primary identifier. Note: This code requires the use of an Entity Code.
+Start: 01/30/2011
+756	Entity's Received Date. Note: This code requires the use of an Entity Code.
+Start: 01/30/2011
+757	Last seen date.
+Start: 01/30/2011
+758	Repriced approved HCPCS code.
+Start: 01/30/2011
+759	Round trip purpose description.
+Start: 01/30/2011
+760	Tooth status code.
+Start: 01/30/2011
+761	Entity's referral number. Note: This code requires the use of an Entity Code.
+Start: 01/30/2011
+762	Locum Tenens Provider Identifier. Code must be used with Entity Code 82 - Rendering Provider
+Start: 01/20/2013
+763	Ambulance Pickup ZipCode
+Start: 01/20/2013
+764	Professional charges are non covered.
+Start: 06/02/2013
+765	Institutional charges are non covered.
+Start: 06/02/2013
+766	Services were performed during a Health Insurance Exchange (HIX) premium payment grace period.
+Start: 11/01/2013
+767	Qualifications for emergent/urgent care
+Start: 01/26/2014
+768	Service date outside the accidental injury coverage period.
+Start: 01/26/2014
+769	DME Repair or Maintenance
+Start: 06/01/2014
