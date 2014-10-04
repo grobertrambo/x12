@@ -1,0 +1,25 @@
+ REMINDER - Important edit changes for Professional claims effective October 5, 2014
+
+CMS issued Change Request (CR) 8700 edit spreadsheet changes for Professional electronic claims. The Professional edit changes below will be implemented the evening of October 5, 2014.
+
+NEW EDITS
+ 
+
+    X222.079.1000B.NM109.060 - Added new translator edit to ensure the 1000B NM109 is the same value as GS03
+
+REVISED EDITS
+ 
+
+    X222.226.2300.HI01-1.025 - Deactivation date removed.
+    X222.226.2300.HI01-1.026 - Deactivation date removed.
+    X222.310.2320.MOA03.010 - Changed CSC 187 to CSC 516 and added EIC
+    X222.310.2320.MOA03.020 - Changed CSC 187 to CSC 516 and added EIC
+    X222.310.2320.MOA04.010 - Changed CSC 187 to CSC 516 and added EIC
+    X222.310.2320.MOA04.020 - Changed CSC 187 to CSC 516 and added EIC
+    X222.310.2320.MOA05.010 - Changed CSC 187 to CSC 516 and added EIC
+    X222.310.2320.MOA05.020 - Changed CSC 187 to CSC 516 and added EIC
+    X222.310.2320.MOA06.010 - Changed CSC 187 to CSC 516 and added EIC
+    X222.310.2320.MOA06.020 - Changed CSC 187 to CSC 516 and added EIC
+    X222.310.2320.MOA07.010 - Changed CSC 187 to CSC 516 and added EIC
+    X222.310.2320.MOA07.020 - Changed CSC 187 to CSC 516 and added EIC
+    X222.310.2320.MOA07.020 - Edit stated 'edit deactivated' in error; removed the words 'edit deactivated'.
