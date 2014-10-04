@@ -1,0 +1,673 @@
+http://www.open-emr.org/wiki/index.php/X12_837p_Reference
+
+X12 837p Reference
+
+
+
+    1 The 'Golden Standard' for X12 interface files, containing health claim 837P information
+        1.1 General Description
+        1.2 The Inbound Transaction Header
+        1.3 The Functional Group Header
+        1.4 The Transaction Set Header
+        1.5 The Beginning of Hierarchical Transaction Header
+        1.6 The Reference Identification Section
+        1.7 The 1000 Loop
+            1.7.1 The 1000A Loop
+                1.7.1.1 1000A NM1 Section
+                1.7.1.2 1000A PER Section
+            1.7.2 The 1000B Loop
+                1.7.2.1 1000B NM1 Section
+        1.8 The 2000A Loop
+            1.8.1 2000A HL Section
+            1.8.2 2000A PRV Section
+        1.9 Loop 2010AA
+            1.9.1 2010AA NM1 Section
+            1.9.2 2010AA N3 Section
+            1.9.3 2010AA N4 Section
+            1.9.4 2010AA REF Section
+        1.10 Loop 2010BA
+            1.10.1 2010AA NM1 Section
+            1.10.2 2010AA N3 Section
+            1.10.3 2010AA N4 Section
+        1.11 Loop 2000B
+            1.11.1 2000B HL Section
+            1.11.2 2000B SBR Section
+        1.12 Loop 2000BA
+            1.12.1 2000BA NM1 Section
+            1.12.2 2000BA N3 Section
+            1.12.3 2000BA N4 Section
+            1.12.4 2000BA DMG Section
+        1.13 Loop 2000BC
+            1.13.1 2000BC NM1 Section
+        1.14 Loop 2300
+            1.14.1 2300 CLM Section
+            1.14.2 2300 DTP Section
+            1.14.3 2300 REF Section
+            1.14.4 2300 HL Section
+        1.15 The 2310A Loop
+            1.15.1 2310A NM1 Section
+            1.15.2 2310A PRV Section
+        1.16 The 2310B Loop
+            1.16.1 2310B NM1 Section
+            1.16.2 2310B PRV Section
+            1.16.3 2310B REF Section
+        1.17 The 2310C Loop
+            1.17.1 2310C NM1 Section
+            1.17.2 2310C N3 Section
+            1.17.3 2310C N4 Section
+        1.18 The 2400 Loop
+            1.18.1 2400 LX Section
+            1.18.2 2400 SV1 Section
+            1.18.3 2400 DTP Section
+            1.18.4 2400 NM1 Section
+            1.18.5 2400 PRV Section
+            1.18.6 2400 REF Section
+        1.19 The Transaction Set Trailer
+        1.20 The Functional Group Trailer
+        1.21 The Interchange Control Trailer
+    2 Resources
+
+The 'Golden Standard' for X12 interface files, containing health claim 837P information
+
+This standard is based on an analysis of OpenEMR generated files (from a slightly hacked OpenEMR version), Provider Electronic Solutions generated files captured on the wire, and various internet resources. It is not meant to be any sort of legal advice, replacement for the 'real standards, or anything except a reference document, for those writing code surrounding X12 interfacing component of OpenEMR.
+General Description
+
+X12 files are broken into multiple sections of fields, each section having a 2-3 digit alphanumeric header, and ending in a ~. fields have asterisks separating them. fields containing more than one value have the values separated by colons(in the examples we're looking at).
+The Inbound Transaction Header
+
+The first section in an X12 file is the Inbound Transaction Header. This section is used once at the beginning of the file, and is matched by a corresponding IEA section at the end of the file.
+
+        The letters 'ISA' are the first three characters identifying the section.
+        The first field pair is type 00, with 10 spaces.
+        The second field pair is type 00, with 10 spaces.
+        The third field pair is type ZZ, with our X12 Sender ID left formatted in a 15 character field, padded with spaces.
+        The fourth field pair is type 30, with the target's X12 Receiver ID left formatted in a 15 character field, padded with spaces.
+        The fifth field pair is the date submitted (date +%y%m%d) in an six character field, and the time of submission (date +%H%M) in a 4 character field.
+        The sixth field pair is type U, with 00401 in it. (per HIPAA?)
+        The thirteenth field is the interchange control number, a unique value for this transaction (9 digits), which is filled in by PES using an auto incrementing number; starting at 1, and adding 1 for each transmission this installation of PES has sent. OpenEMR uses the number of seconds since the beginning of Jan 1st, 1970.
+        The fourteenth field is a flag indicating whether we request acknowledgment for this file, or not (0 or 1), always filled in with '0' by PES and OpenEMR.
+        The fifteenth field is a test or production flag, filled with 'T' or 'P'.
+        The sixteenth field specifies the component separator for fields that contain multiple values. 
+
+The Functional Group Header
+
+After the ~ marking the first section complete, we get into the 'Functional Group Header' section. This section is used once at the beginning of the file right after the 'ISA' section, and is matched by a GE section immediately preceding the IEA section at the end of the file.
+
+        The letters 'GS' are the first two characters identifying the section.
+        The first field contains 'HC', indicating this is a health care document.
+        The second field is the 'Application Senders Code', which contains our X12 Submitter ID.
+        The third field is the 'Application Receivers Code'. which contains the target's X12 Recipient ID.
+        The fourth field contains the date submitted (date +%Y%m%d) in an eight character field.
+        The fifth field contains the time submitted (date +%H%M) in a four character field.
+        The sixth field contains the 'Group Control Number', which is filled in by PES with the same unique value from the thirteenth field of the ISA header, without leading zeroes.
+        The seventh field contains 'X', per the HIPAA implementation guide.
+        The eighth field contains '004010X098A1', which is our X12 version number. 
+
+The Transaction Set Header
+
+After the ~ marking the second section complete, we get into the 'Transaction Set Header' section. This section is used once at the beginning of the file right after The Functional Group section, and is matched by a 'SE' section immediately preceding the GE section at the end of the file.
+
+        The letters 'ST' are the first two characters identifying the section.
+        The first field is the 'Transaction Set Identifier Code', which contains '837', indicating this is an 837 health care claim.
+        The second field is the 'Transaction Set Control Number', which contains '000000001' in files generated by PES, an '0001' in files generated by OpenEMR, which must be matched by the second field of the corresponding SE record. 
+
+The Beginning of Hierarchical Transaction Header
+
+After the ~ marking the third section complete, we get into the 'Beginning of Hierarchical Transaction' section.
+
+        The letters 'BHT' are the first three characters identifying the section.
+        The first field is the 'Hierarchical Structure Code', which contains '0019'.
+        The second field is the 'Transaction Set Purpose Code', which contains '00'.
+        The third field is the 'Originator Application Transaction Identifier'. PES fills in this identifier with a combination of: 
+
+            a single '0'.
+            the 'group control number' from the sixth field of the 'Functional Group Header'.
+            the date submitted in '%y%m%d' format.
+            the time submitted in '%H%M' format.
+            5 unknown digits. (changing)
+            3 zeroes. 
+
+        The fourth field is the 'Transaction Set Create Date', which contains the submission date in '%Y%m%d' format.
+        The fifth field is the 'Transaction Set Create Time', which contains the submission time in '%H%M' format.
+        The sixth field is the 'Claim Or Encounter Identifier', which contains the characters 'CH'. 
+
+The Reference Identification Section
+
+after the ~ marking the fourth section complete, we enter the 'Reference Identification' Section. the Reference Identification section contains the X12 version string required by HIPAA(?).
+
+        The letters 'REF' are the first three characters identifying this section.
+        The first field is the 'Reference Identification Qualifier'. this field contains '87' in OpenEMR, PES, and an outside source.
+        The second field is the 'Reference Identifier', which contains the X12 version string. 
+
+The 1000 Loop
+
+After the ~ marking the fifth section complete, we get into the '1000 loop'. This loop specifies who is supposed to pay for claims in this file, and to whom they're supposed to send the money.
+
+
+        The 1000 loop is broken into two sections, 1000A an 1000B. 
+
+The 1000A Loop
+
+The 1000A loop contains the information about the party sending this document, AKA, us.
+
+        the 1000A loop consists of two sections, a NM1, and a PER section. 
+
+1000A NM1 Section
+
+In the NM1 section contained in the 1000A loop, we have the following:
+
+        The characters 'NM1' are the first three characters, identifying the section.
+        The first field is the 'Entity Identifier Code', which contains '41' indicating 'Submitting Party' in OpenEMR, PES, and an outside source.
+        The second field is the 'Entity Type Qualifier', which is '2' (organizational) in OpenEMR, PES, and an outside source.
+        The third field is either the Last Name or the Organization Name, depending on the entity type chosen previously. PES and OpenEMR fills this in with the facility name.
+        The fourth, fifth, sixth, and seventh field are empty in files generated by OpenEMR, PES, and an outside source.
+        The eighth field is the 'Identification Code Qualifier', which is '46' in OpenEMR, PES, and an outside source.
+        The ninth field is the 'Identification Code', which is filled in by our X12 Submitter ID in PES and OpenEMR. 
+
+1000A PER Section
+
+The PER section contained in the 1000A loop is meant for information regarding an 'Administrative Communications Contact' person.
+
+In the PER section contained in the 1000A loop, we have the following:
+
+        The characters 'PER' are the first three characters, identifying the section.
+        The first field is the 'Contact Function Code', and contains the characters 'IC' in OpenEMR, PES, and an outside source.
+        The second field is the 'Submitter Contact Name', and contains our organization name in PES, and OpenEMR.
+        The third field is the 'Communication Number Qualifier', and contains 'TE' in PES and OpenEMR, indicating our billing staff should be contacted via a telephone.
+        The fourth field is the 'Communication Number', which contains the phone number to contact our billing staff. 
+
+The 1000B Loop
+
+After the 1000A PER section, we begin the 1000B loop, which contains information regarding the receiving party, AKA, whom we're sending this document to, expecting to get paid. The 1000B Loop only contains one item of interest for us, an NM1 section.
+1000B NM1 Section
+
+In the NM1 section contained in the 1000B loop, we have the following:
+
+        The characters 'NM1' are the first three characters, identifying the section.
+        The first field is the 'Entity Identifier Code', and contains '40' indicating 'Receiving Party' in OpenEMR, PES, and an outside source.
+        The second field is the 'Entity Type Qualifier', and contains '2' (organizational) in OpenEMR, PES, and an outside source.
+        The Third field is the Name of the party being identified.
+        The fourth, fifth, sixth, and seventh field are empty in files generated by OpenEMR, PES, and an outside source.
+        The eighth field is the 'Identification Code Qualifier', which is '46' in OpenEMR, PES, and an outside source.
+        The ninth field is the 'Identification Code', which is filled in with our target's X12 Recipient ID in PES and OpenEMR. 
+
+
+The 2000A Loop
+
+The 2000A loop is the 'Pay-To-Provider' loop. This loop contains the information about the billing service provider (us again). It contains two sections, a HL section, and a PRV section.
+2000A HL Section
+
+The HL section defines what level in the hierarchy a given segment of the file is, as well as its parents, and name.
+
+In the HL segment, we have the following:
+
+        The characters 'HL' are the first two characters, identifying the section.
+        The first field is the 'Hierarchical Unit ID', and contains '1' in OpenEMR, PES, and an outside source.
+        The second field is the 'Parent ID', the hierarchical unit id of the parent object of this segment, and is empty in OpenEMR, PES, and an outside source.
+        The third field is the 'Hierarchical Level Code', and contains '20' in OpenEMR, PES, and an outside source.
+        the fourth field is the 'Hierarchical Child Code', which indicates whether or not there are subordinate (or child) HL segments immediately following this segment. It contains '1' in OpenEMR, PES, and an outside source. 
+
+2000A PRV Section
+
+The PRV section of the 2000A loop is used to provide the taxonomy code of the agency providing service.
+
+In the PRV section, we have the following:
+
+        The characters 'PRV' are the first three characters, identifying the section.
+        The first field is the 'Provider Code', and contains 'BI' in OpenEMR, PES, and an outside source. 'BI' indicates we are a group billing, and that the individual provider information will be provided later.
+        The second field is the Reference Identification Qualifier, and contains 'ZZ' in OpenEMR, PES, and an outside source. 'ZZ' indicates that the next field is a taxonomy code.
+        the third field is the Reference Identification, and contains our taxonomy code in OpenEMR, PES, and an outside source. 
+
+Loop 2010AA
+
+The 2010AA loop is for containing the 'Billing Provider Name' in some systems. in the case of OpenEMR and PES, we're reporting the rendering provider at the Claim level, so that we can bill for services provided by different individuals in the same X12 file. this means the information in the 2010AA loop is that of our organization, not of a rendering provider.
+2010AA NM1 Section
+
+The NM1 section of the 2010AA loop is used to provide the identifying information about the billing provider. When reporting the rendering provider at the Claim level, we fill in this section with information about our organization.
+
+In the NM1 section contained in the 2010AA loop, we have the following:
+
+        The characters 'NM1' are the first three characters, identifying the section.
+        The first field is the 'Entity Identifier Code', and contains '85' indicating 'Pay to Provider' in OpenEMR, PES, and an outside source.
+        The second field is the 'Entity Type Qualifier', and contains '2' (organizational) in OpenEMR, PES, and an outside source.
+        The Third field is the Name of the party being identified.
+        The fourth, fifth, sixth, and seventh field are empty in files generated by OpenEMR, PES, and an outside source.
+        The eighth field is the 'Identification Code Qualifier', which is 'XX' in OpenEMR, PES, and an outside source.
+        The ninth field is the 'Identification Code', which is filled in with our NPI in PES and OpenEMR. 
+
+2010AA N3 Section
+
+The N3 section is a row for containing our street address.
+
+In the N3 section contained in the 2010AA loop, we have the following:
+
+        The characters 'N3' are the first two characters, identifying the section.
+        The first field rest of this section is one field, containing our street address. 
+
+2010AA N4 Section
+
+The N4 section is a row for containing the rest of our address information.
+
+In the N4 section contained in the 2010AA loop, we have the following:
+
+        The characters 'N4' are the first two characters, identifying the section.
+        The first field is the 'City Name', and contains our city name in all caps in OpenEMR and PES.
+        The second field is the 'State or Provence Code', and contains the two letter abbreviation for our state in OpenEMR, and PES.
+        The third field is the 'Postal Zone or Zip Code', and contains our full zip code (9 digits) in OpenEMR, and PES. 
+
+2010AA REF Section
+
+The REF section is where we provide our secondary identification information.
+
+In the REF section contained in the 2010AA loop, we have the following:
+
+        The characters 'REF' are the first three characters, identifying the section.
+        the first field is the 'Reference Identification Qualifier', AKA , the type of identification number we're using in the next field. it contains 'EI' in both OpenEMR and PES, indicating the next field will contain our TaxID.
+        the second field is filled in with our business' TaxID in PES generated files, but is filled in with our X12 Sender ID in OpenEMR.
+        ECLAIMS, INC clearing house requires and additional REF (02) entry. This is referred to as Provider Site Number, and is hard coded as follows
+            REF*G5*0001~ 
+
+Loop 2010BA
+
+The 2010BA loop is generated by OpenEMR, but is not generated by PES.
+2010AA NM1 Section
+
+The NM1 section of the 2010AA loop is used to provide the identifying information about the billing provider. When reporting the rendering provider at the Claim level, we fill in this section with information about our organization.
+
+In the NM1 section contained in the 2010AA loop, we have the following:
+
+        The characters 'NM1' are the first three characters, identifying the section.
+        The first field is the 'Entity Identifier Code', and contains '85' indicating 'Pay to Provider' in OpenEMR, PES, and an outside source.
+        The second field is the 'Entity Type Qualifier', and contains '2' (organizational) in OpenEMR, PES, and an outside source.
+        The Third field is the Name of the party being identified.
+        The fourth, fifth, sixth, and seventh field are empty in files generated by OpenEMR, PES, and an outside source.
+        The eighth field is the 'Identification Code Qualifier', which is 'XX' in OpenEMR, PES, and an outside source.
+        The ninth field is the 'Identification Code', which is filled in with our NPI in PES and OpenEMR. 
+
+2010AA N3 Section
+
+The N3 section is a row for containing our street address.
+
+In the N3 section contained in the 2010AA loop, we have the following:
+
+        The characters 'N3' are the first two characters, identifying the section.
+        The rest of this section is one field, containing our street address. 
+
+2010AA N4 Section
+
+The N4 section is a row for containing the rest of our address information.
+
+In the N4 section contained in the 2010AA loop, we have the following:
+
+        The characters 'N4' are the first two characters, identifying the section.
+        The first field is the 'City Name', and contains our city name in all caps in OpenEMR and PES.
+        The second field is the 'State or Provence Code', and contains the two letter abbreviation for our state in OpenEMR, and PES.
+        The third field is the 'Postal Zone or Zip Code', and contains our full zip code (9 digits) in OpenEMR, and PES. 
+
+Loop 2000B
+
+The 2000B loop contains information about an individual subscriber, AKA, a person we provided service to, and the entity we would like to bill for services rendered. Its broken into two sub-loops, Loop 2000BA describing the person whos plan we're trying to bill, and loop 2000BC describing the entity we're trying to charge.
+2000B HL Section
+
+The HL section defines what level in the hierarchy a given segment of the file is, as well as its parents, and name.
+
+In the HL segment, we have the following:
+
+        The characters 'HL' are the first two characters, identifying the section.
+        The first field is the 'Hierarchical Unit ID', and contains '2' in OpenEMR, PES, and an outside source.
+        The second field is the 'Parent ID', the hierarchical unit id of the parent object of this segment, and contains '1' in OpenEMR, PES, and an outside source.
+        The third field is the 'Hierarchical Level Code', and contains '22' in OpenEMR, PES, and an outside source.
+        the fourth field is the 'Hierarchical Child Code', which indicates whether or not there are subordinate (or child) HL segments immediately following this segment. It contains '0' in OpenEMR, PES, and an outside source. 
+
+2000B SBR Section
+
+The SBR section is used to store information about a subscriber, or a person under who's plan we expect the receiving company to reimburse us.
+
+In the SBR segment, we have the following:
+
+        The characters 'SBR' are the first three characters, identifying the section.
+        The first field is the 'Payer Responsibility Sequence Number Code', which is meant to signify the payer's ordering, as in, is this the first, second, or third person we've tried to bill for this event? OpenEMR and PES fill this in with 'P' by default. valid values are: 
+
+            'P' = Primary
+            'S' = Secondary
+            'T' = Tertiary 
+
+        The second field is the 'Insured Group Number', or the subscriber's insurance policy's group number. OpenEMR and PES fill this in with '18'.
+        The third field, through the eighth field are empty, in both files from OpenEMR and files from PES.
+        The ninth field is the 'Claim Filing Indicator Code', which contains the type of payer. PES and OpenEMR fill this value in with 'MC' when the insurance type is set to 'medicaid'. 
+
+Loop 2000BA
+
+This loop contains information about the subscriber who's insurance we're trying to bill the receiving party for.
+2000BA NM1 Section
+
+The NM1 section is a row for containing most of the primary identification information about the subscriber.
+
+In the NM1 section contained in the 2000BA loop, we have the following:
+
+        The characters 'NM1' are the first three characters, identifying the section.
+        The first field is the 'Entity Identifier Code', and contains 'IL' indicating 'Insured or Subscriber' in OpenEMR, PES, and an outside source.
+        The second field is the 'Entity Type Qualifier', and contains '1' indicating 'Person' in OpenEMR, PES, and an outside source.
+        The third field is the last name of the party being identified.
+        The fourth field is the first name of the party being identified.
+        The fifth field is the (optional) middle initial of the party being identified.
+        The sixth and seventh field are empty in files generated by OpenEMR, PES, and an outside source.
+        The eighth field is the 'Identification Code Qualifier', which is 'MI' indivating 'Medicaid Identifier' in OpenEMR, PES, and an outside source.
+        The ninth field is the 'Identification Code', which is filled in with the identified individual's Medicaid ID in PES and OpenEMR. 
+
+2000BA N3 Section
+
+The N3 section is a row for containing the person being identified's street address.
+
+In the N3 section contained in the 2000BAloop, we have the following:
+
+        The characters 'N3' are the first two characters, identifying the section.
+        The first field rest of this section is one field, containing the person identified's street address. 
+
+2000BA N4 Section
+
+The N4 section is a row for containing the rest of the subscriber's address information.
+
+In the N4 section contained in the 2000BA loop, we have the following:
+
+        The characters 'N4' are the first two characters, identifying the section.
+        The first field is the 'City Name', and contains the subscriber's city name in all caps in OpenEMR and PES.
+        The second field is the 'State or Provence Code', and contains the two letter abbreviation for the subscriber's state in OpenEMR, and PES.
+        The third field is the 'Postal Zone or Zip Code', and contains the subscriber's full zip code (9 digits) in OpenEMR, and PES. 
+
+2000BA DMG Section
+
+The DMG section is for containing some of the subscriber's demographics information.
+
+In the DMG section contained in the 2000BA loop, we have the following:
+
+        The characters 'DMG' are the first two characters, identifying the section.
+        The first field is the 'Date Qualifier', and is set to D8 by both OpenEMR and PES.
+        The second field is the subsciber's Birth Date, in YYYYMMDD format.
+        The third field is the subscriber's Gender, either M, F, or U for 'Unknown'. 
+
+Loop 2000BC
+
+This loop contains information about the party we are trying to bill for the services provided in this claim.
+2000BC NM1 Section
+
+The NM1 section contained in loop 2000BC contains the primary identification information about the party we are billing for this claim.
+
+In the NM1 section contained in the 2000BC loop, we have the following:
+
+        The characters 'NM1' are the first three characters, identifying the section.
+        The first field is the 'Entity Identifier Code', and contains 'PR' indicating 'Primary Payor' in OpenEMR, PES, and an outside source.
+        The second field is the 'Entity Type Qualifier', and contains '2' indicating 'Organization' in OpenEMR, PES, and an outside source.
+        The third field is the name of the organization being identified.
+        The fourth, fifth, sixth, and seventh field are empty in files generated by OpenEMR, PES, and an outside source.
+        The eighth field is the 'Identification Code Qualifier', which is 'PI' indivating 'Payor Identification' in OpenEMR, PES, and an outside source.
+        The ninth field is the 'Identification Code', which is filled in with the payor's Tax ID in PES and OpenEMR. 
+
+Loop 2300
+
+The 2300 loop contains information about services we have provided, that we expect the payor to pay for. Its broken into two sub-loops, Loop 2000BA describing the person whos plan we're trying to bill, and loop 2000BC describing the entity we're trying to charge.
+2300 CLM Section
+
+The CLM section contained in loop 2300 contains information about the claim we are making, AKA how much we're wanting for services.
+
+In the CLM section contained in the 2300 loop, we have the following:
+
+        The characters 'CLM' are the first three characters, identifying the section.
+        The first field is the 'Patient Account Number', which is filled in with the 'External Identifier' from OpenEMR's Demographics page.
+        The second field is the 'Total Claim Charge Amount', which is the amount of money we are asking for for this particular claim.
+        The third and fourth fields are empty in files generated by OpenEMR and PES.
+        The fifth field is the 'Facility Code Value'. this value is separated into three fields, separated by colons. the fields are: 
+
+            Field 1 is the 'Facility Type Code'. OpenEMR fills this in using the facility type from the facility this claim was performed in.
+            Field 2 is the 'Facility Code Qualifier'. It Is empty in files generated by OpenEMR and PES.
+            Field 3 is the 'Claim Frequency Code'. in events coded by OpenEMR and PES, this is 1 indicating this is the origional claim, not a re-send of an earlier claim. 
+
+        The sixth field is the 'Provider Signature On File' field. it contains 'N' by default in files generated by OpenEMR, and 'Y' in files created by PES.
+        The seventh field is the 'Assignment or Plan Participation Code'. This is 'A' for 'Assigned' in OpenEMR, or C for 'Not Assigned' in PES.
+        The eighth field is the 'Benefit Assignment Certification Indicator'.
+        The nineth field is the 'Release of Information Code'. This indicates whether a Release of Information is on file for the individual services were provided to.
+        The tenth field is the 'Patient Signature Source Code'. This field is indicates how the signature of the person services are being provided to was obtained, and how we are keeping it. OpenEMR defaults to 'C' indicating 'Signed HCFA-1500 form on file'. PES defaults to B, indicating 'Signed signature authorization form or forms for both HCFA-1500 Claim Form Block 12 and Block 13 are on file' 
+
+2300 DTP Section
+
+The DTP section OpenEMR generates that is contained in loop 2300 contains the date of the 'Onset of Similar Symptoms or Illness'.
+
+In the DTP section contained in the 2300 loop, we have the following:
+
+        The characters 'DTP' are the first three characters, identifying the section.
+        The first field is the 'Date/Time Qualifier'. This tells us what the date in this section means. OpenEMR fills this in with '431', indicating 'Onset of Similar Symptoms or Illness'.
+        The second field is the 'Date Time Period Type Qualifier'. This is filled in with 'D8' in OpenEMR, indicating the next field contains a eight-digit date, formatted YYYMMDD.
+        The third field is the date being described. 
+
+2300 REF Section
+
+The REF section described here is generated by the PES software, but not by OpenEMR. It contains the 'Prior Authorization or Referral Number'. This is a number given to us by the state authorizing us to provide the services in this claim.
+
+In the REF section contained in the 2300 loop, we have the following:
+
+        The characters 'REF' are the first three characters, identifying the section.
+        The first field is the 'Reference Identification Qualifier'. This indicates the type of data being referenced, and contains 'G1' indicating that this refers to a 'Prior Authorization or Referral Number'.
+        The second field is the 'Reference Identification'. This is filled in with the Prior Auth number the state has given us. 
+
+2300 HL Section
+
+The HL section contained in the 2300 loop contains the primary diagnosis of the individual who we are claiming to have provided services to.
+
+In the HL section contained in the 2300 loop, we have the following:
+
+        The characters 'HL' are the first two characters, identifying the section.
+        The first field is divided into two fields by a colon. they are: 
+
+            Field 1 -- This field contains the 'Principle Diagnosis Qualifier'. OpenEMR fills this with 'BK' indicating the next field is the 'Primary Diagnosis'.
+            Field 2 -- This field contains the 'Diagnosis Code', an ICD9 code for the problem we were treating by providing the service (later described). 
+
+The 2310A Loop
+
+The 2310A loop contains information about the referring provider, which is the 'Provider' chosen in the OpenEMR demographics page. In PES, this is the medicaid designated primary care provider.
+2310A NM1 Section
+
+The NM1 section of the 2310A loop is used to provide the identifying information about the referring provider.
+
+In the NM1 section contained in the 2310A loop, we have the following:
+
+        The characters 'NM1' are the first three characters, identifying the section.
+        The first field is the 'Entity Identifier Code', and contains 'DN' indicating 'Referring Provider' in OpenEMR, PES, and an outside source.
+        The second field is the 'Entity Type Qualifier', and contains '1' (Person) in OpenEMR, PES, and an outside source.
+        The third field is the Last Name of the party being identified.
+        The fourth field is the First name of the party being identified.
+        The fifth field is the Middle Initial of the party being identified.
+        The sixth and seventh field are empty in files generated by OpenEMR, PES, and an outside source.
+        The eighth field is the 'Identification Code Qualifier', which is 'XX' in OpenEMR, PES, and an outside source.
+        The ninth field is the 'Identification Code', which is filled in with the identified provider's NPI in PES and OpenEMR. 
+
+2310A PRV Section
+
+The PRV section contained in the 2310A loop is used to hold the taxonomy code of the provider identified in the 2310A NM1 section.
+
+In the PRV section contained in the 2310A Loop, we have the following:
+
+        The characters 'PRV' are the first three characters, identifying the section.
+        The first field is the 'Provider Code', and is filled in with 'RF', indicating that this identifier belongs to the 'Referring Provider'.
+        The second field is the 'Reference Identifier Qualifier', and is filled with 'ZZ', indicating the following field is a taxonomy code.
+        The third field is the 'Reference Identifier', and contains the Taxonomy code of the referring provider. 
+
+The 2310B Loop
+
+The 2310B loop contains information about the rendering provider. since we're reporting provider details at the service level, both OpenEMR and PES fill this in with or organization's information.
+2310B NM1 Section
+
+The NM1 section of the 2310B loop is used to provide the identifying information about the rendering provider.
+
+In the NM1 section contained in the 2310B loop, we have the following:
+
+        The characters 'NM1' are the first three characters, identifying the section.
+        The first field is the 'Entity Identifier Code', and contains '82' indicating 'Rendering Provider' in OpenEMR, PES, and an outside source.
+        The second field is the 'Entity Type Qualifier', and contains '2' (Organization) in OpenEMR, PES, and an outside source.
+        The third field is the name of our organization.
+        The fourth, fifth, sixth, and seventh field are empty in files generated by OpenEMR, PES, and an outside source.
+        The eighth field is the 'Identification Code Qualifier', which is 'XX' in OpenEMR, PES, and an outside source.
+        The ninth field is the 'Identification Code', which is filled in with our NPI in PES and OpenEMR. 
+
+2310B PRV Section
+
+The PRV section contained in the 2310B loop is used to hold the taxonomy code of the provider identified in the 2310B NM1 section.
+
+In the PRV section contained in the 2310B Loop, we have the following:
+
+        The characters 'PRV' are the first three characters, identifying the section.
+        The first field is the 'Provider Code', and is filled in with 'PE', indicating that this code is the 'Performing Provider Specialty.
+        The second field is the 'Reference Identifier Qualifier', and is filled with 'ZZ', indicating the following field is a taxonomy code.
+        The third field is the 'Reference Identifier', and contains our organization's taxonomy code. 
+
+2310B REF Section
+
+PES adds a REF section in the 2310B loop, while OpenEMR does not. The REF section contained in the 2310B loop is used to provide the TaxID of the provider identified in the 2310B NM1 section.
+
+In the REF section contained in the 2310B loop, we have the following:
+
+        The characters 'REF' are the first three characters, identifying the section.
+        the first field is the 'Reference Identification Qualifier', AKA , the type of identification number we're using in the next field. it contains 'EI' in both OpenEMR and PES, indicating the next field will contain our TaxID.
+        the second field is filled in with our business' TaxID in PES generated files 
+
+The 2310C Loop
+
+The 2310C loop contains information about the facility within which services were provided. In OpenEMR, this is the facility selected on the 'encounters' page, when the encounter is created.
+2310C NM1 Section
+
+The NM1 section of the 2310C loop is used to provide the identifying information about the facility.
+
+In the NM1 section contained in the 2310C loop, we have the following:
+
+        The characters 'NM1' are the first three characters, identifying the section.
+        The first field is the 'Entity Identifier Code'. OpenEMR fills this with 'FA' indicating 'Service Facility', while PES contains '77' indicating 'Service Location'.
+        The second field is the 'Entity Type Qualifier', and contains '2' (Organization) in OpenEMR, PES, and an outside source.
+        The third field is the name of the location service was provided at.
+        The fourth, fifth, sixth, and seventh field are empty in files generated by OpenEMR, PES, and an outside source.
+        The eighth field is the 'Identification Code Qualifier', which is 'XX' in OpenEMR, PES, and an outside source.
+        The ninth field is the 'Identification Code', which is filled in with our NPI in PES and OpenEMR. 
+
+2310C N3 Section
+
+The N3 section is a row for containing the facility services were provided at's street address.
+
+In the N3 section contained in the 2310C loop, we have the following:
+
+        The characters 'N3' are the first two characters, identifying the section.
+        The first field rest of this section is one field, containing our facility's street address. 
+
+2310C N4 Section
+
+The N4 section is a row for containing the rest of the facility's address information.
+
+In the N4 section contained in the 2310C loop, we have the following:
+
+        The characters 'N4' are the first two characters, identifying the section.
+        The first field is the 'City Name', and contains the subscriber's city name in all caps in OpenEMR and PES.
+        The second field is the 'State or Provence Code', and contains the two letter abbreviation for the service facility's state.
+        The third field is the 'Postal Zone or Zip Code', and contains the service facility's full zip code (all 9 digits). 
+
+The 2400 Loop
+
+The 2400 loop is the loop which services are described in. The rendering provider for each service is described at this level.
+2400 LX Section
+
+The LX section is a row containing nothing but a counter, indicting which service we are describing. it starts with '1' for the first item, incrementing by one for each service provided during this claim.
+
+In the LX section contained in the 2400 loop, we have the following:
+
+        The characters 'LX' are the first two characters, identifying the section.
+        The first field is the 'Service Line Number', and tells us the item number in this claim we are describing. 
+
+2400 SV1 Section
+
+The SV1 section contains information about a specific service we have provided.
+
+In the SV1 section contained in the 2400 loop, we have the following:
+
+        The characters 'SV1' are the first three characters, identifying the section.
+        The first field is the 'Product/Service ID'. This field contains the code for service performed, along with any modifiers. it always starts with 'HC:', indicating this is a health care claim.
+        The second field is the 'Line Item Charge Amount'. This field contains the total amount we want the payer to pay for this service.
+        The third field is the 'Unit or Basis of Measurement Code'. This is set to UN indicating we are charging for this service by units of time.
+        The fourth field is the 'Quantity' field. This field tells us how many units of the service being described were administered.
+        The fifth, and sixth fields are not used, and remain empty.
+        The seventh field is the 'Diagnostic Code Pointers'. this field is filled in with up to four values(colon separated), all of which are between one and eight, indicating what diagnosis coded at the claim level this service was intended to treat. 
+
+2400 DTP Section
+
+The DTP section contains information about the date range services were provided in.
+
+In the DTP section contained in the 2400 loop, we have the following:
+
+        The characters 'DTP' are the first three characters, identifying the section.
+        The first field is the 'Date/Time Qualifier'. This tells us what the date in question is supposed to indicate. OpenEMR fills this in with '472' indicating 'Service Date', AKA, the date the service in the SV1 line was provided.
+        The second field is the 'Date/Time Period Format Qualifier', which tells us what the format for the following field will be. PES fills this in with 'RD8', indicating the next field will be a date range(formatted YYYYMMDD-YYYMMDD), while OpenEMR fills this with 'D8', indicating the next field will be a single date (formatted YYYYMMDD)..
+        The third field is the 'Date/Time Period'. this is the date (or date range) services were provided in. 
+
+2400 NM1 Section
+
+The NM1 section is a row for containing most of the primary identification information about the individual who rendered the services outlined in the SV1 section.
+
+In the NM1 section contained in the 2400 loop, we have the following:
+
+        The characters 'NM1' are the first three characters, identifying the section.
+        The first field is the 'Entity Identifier Code', and contains '82' indicating 'Rendering Provider' in OpenEMR, PES, and an outside source.
+        The second field is the 'Entity Type Qualifier', and contains '1' indicating 'Person' in OpenEMR, PES, and an outside source.
+        The third field is the last name of the party being identified.
+        The fourth field is the first name of the party being identified.
+        The fifth field is the (optional) middle initial of the party being identified.
+        The sixth and seventh field are empty in files generated by OpenEMR, PES, and an outside source.
+        The eighth field is the 'Identification Code Qualifier', which is 'XX' indicating 'NPI' in OpenEMR, PES, and an outside source.
+        The ninth field is the 'Identification Code', which is filled in with the identified individual's NPI number in PES and OpenEMR. 
+
+2400 PRV Section
+
+The PRV section of the 2400 loop is used to provide the taxonomy code of the individual who provided the service described in SV1.
+
+In the PRV section, we have the following:
+
+        The characters 'PRV' are the first three characters, identifying the section.
+        The first field is the 'Provider Code', and contains 'PE' in OpenEMR, PES, and an outside source. 'PE' indicates this code applies to the provider who rendered service in SV1.
+        The second field is the Reference Identification Qualifier, and contains 'ZZ' in OpenEMR, PES, and an outside source. 'ZZ' indicates that the next field is a taxonomy code.
+        the third field is the Reference Identification, and contains the provider's taxonomy code in OpenEMR, PES, and an outside source. 
+
+2400 REF Section
+
+The REF section of the 2400 loop is not generated by OpenEMR. In cases where we are identifying providers by medicaid identifiers, instead of NPI numbers, PES provides the agency's TaxID in the NM1 section (with a type of 24), and adds this section for holding the medicaid identifier.
+
+In the REF section in the 2400 loop, we have the following:
+
+        The characters 'REF' are the first three characters, identifying the section.
+        The first field is the 'Reference Identification Qualifier'. This field tells us what type of data to expect in the next field, and is filled in with '1D' indicating 'Medicaid Provider Number'.
+        The second field is the 'Reference Identification'. This field is filled in with the medicaid provider number of the individual who provided services. 
+
+The Transaction Set Trailer
+
+After the last segment of the last claim, we have the transaction set trailer. this is to identify how many segments were contained in this document, as well as including a unique identifier matching the transaction set header.
+
+In the SE section, we have the following:
+
+        The characters 'SE' are the first two characters, identifying the section.
+        The first field is the 'Number of Included Segments'. this is the count of sections contained between the transaction set header, and this item, including this item and the transaction set header.
+        The second field is the 'Transaction Set Control Number'. This is the same unique identifier as is contained in the transaction set header, and must match. 
+
+The Functional Group Trailer
+
+Immediately following the transaction set trailer, we have the functional group trailer. this trailer is to identify how many transaction sets are contained in this file, as well as having a unique identifier, for matching to the functional group header.
+
+In the GE section, we have the following:
+
+        The characters 'GE' are the first two characters, identifying the section.
+        The first field is the 'Number of transaction sets included'. both OpenEMR and PES only submit items as one large transaction, this field is always '1' in our example files.
+        The second field is the 'Group Control Number'. This is the same number from GS06, which is repeated here for comparison purposes. 
+
+The Interchange Control Trailer
+
+Immediately following the functional group trailer, we have the interchange control trailer. this trailer is to identify how many functional groups are contained in this file, as well as having a unique identifier, for matching to the functional group header.
+
+In the IEA section, we have the following:
+
+        The characters 'IEA' are the first three characters, identifying the section.
+        The first field is the 'Number of Included Functional Groups'. both OpenEMR and PES only submit items as one large transaction, this field is always '1' in our examples.
+        The second field is the 'Group Control Number'. This is the same number from ISA13, which is repeated here for comparison purposes. 
+
+- See more at: http://www.open-emr.org/wiki/index.php/X12_837p_Reference#sthash.lXAYcZAZ.dpuf
