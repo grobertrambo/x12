@@ -1,4 +1,4 @@
- 	ASC X12 TR3 Schema License Agreement (Personal Use)
+ 	ASC X12 TR3 Schema License Agreement (Personal Use) 2014
 
 This is a legal License Agreement ("Agreement"), based on mutual consideration, entered into between you, the purchaser ("You" or "Licensee"), and Data Interchange Standards Association, Inc. ("DISA"), as Secretariat to the Accredited Standards Committee X12 ("ASC X12"), for the licensing of ASC X12 TR3 Schemas ("Product"). You will be required to check a box during Product installation indicating that you have read this Agreement. Installing or otherwise using the Product, constitutes acceptance of the following terms and conditions of this Agreement. The effective date of this Agreement is the date You accept the terms of this Agreement. If You do not fully agree with all of the terms and conditions, do not purchase the Product.
 
