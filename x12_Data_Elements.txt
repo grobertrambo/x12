@@ -19,7 +19,7 @@ If updates are necessary because of modifications to the underlying ASC X12 Stan
 
 Trademark and Copyright:
 DATA INTERCHANGE STANDARDS ASSOCIATION® DISA® and ASC X12TM are trademarks of DISA and may not be used without the prior written consent of DISA. Copyright to Product is owned by DISA as Secretariat of ASC X12 and, except as authorized by this Agreement, may not be used without the prior written consent of DISA. Copyright © 2011 DISA. Format Copyright © Washington Publishing Company ("WPC") 2011. Exclusively published by WPC. All rights reserved. If authorized under this Agreement, or if redistribution is authorized by payment of the applicable fee, all versions of software, products, or materials incorporating the Product must include the italicized copyright notice above
-
+http://en.wikipedia.org/wiki/INI_file
 
 AAA00=Request Validation
 AAA01=Yes/No Condition or Response Code
